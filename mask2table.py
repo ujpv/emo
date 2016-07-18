@@ -3,9 +3,11 @@
 import sys
 import progressbar
 
-MASK_FILENAME = "mask_granny_positions.txt"
-HEAD_FILENAME = "head_granny_positions.txt"
-RESULT_FILE_NAME = 'corresponds.txt'
+SYNTAX_MSG = "Syntax error:\npython mask2table.py MODEL_FILENAME MASK_FILENAME MAX_DIST"
+
+# MASK_FILENAME = "mask_granny_positions.txt"
+# HEAD_FILENAME = "head_granny_positions.txt"
+# RESU_FILENAME = 'corresponds.txt'
 
 MAX_DIST = 0.07
 
@@ -44,15 +46,18 @@ def get_nearest(p, model):
 
 ###################################################################################
 
-if len(sys.argv) != 4:
-    print("Syntax error")
+if len(sys.argv) != 5:
+    print(SYNTAX_MSG)
     exit()
 else:
     try:
-        MAX_DIST = float(sys.argv[3])
+        MAX_DIST = float(sys.argv[4])
     except BaseException:
-        print("Syntax error")
+        print(SYNTAX_MSG)
         exit()
+    HEAD_FILENAME = sys.argv[1]
+    MASK_FILENAME = sys.argv[2]
+    RESU_FILENAME = sys.argv[3]
 
 for line in open(MASK_FILENAME, "r"):
     mask.append(tuple(map(float, line.split(' '))))
@@ -78,7 +83,7 @@ for p in head:
     bar.update(bar.value + 1)
     result.append(get_nearest(p, mask))
 
-with open(RESULT_FILE_NAME, mode='wt', encoding='utf-8') as myfile:
+with open(RESU_FILENAME, mode='wt', encoding='utf-8') as myfile:
     myfile.write('\n'.join(str(x) for x in result))
 
 print("\nWriten {} numbers.".format(len(result)))
