@@ -3,7 +3,7 @@
 import sys
 import progressbar
 
-SYNTAX_MSG = "Syntax error:\npython mask2table.py MODEL_FILENAME MASK_FILENAME MAX_DIST"
+SYNTAX_MSG = "Syntax error:\npython mask2table.py MODEL_FILENAME MASK_FILENAME RESULT_FILENAME MAX_DIST\n"
 
 # MASK_FILENAME = "mask_granny_positions.txt"
 # HEAD_FILENAME = "head_granny_positions.txt"
