@@ -33,7 +33,7 @@ def get_nearest(p, model):
 
 def fix_mask(in_file_name, out_file_name):
     lines = [l for l in open(in_file_name, "r")]
-    result = [None] * len(lines)
+    result = [str()] * len(lines)
     for (i, n) in enumerate(corresponds):
         result[i] = lines[n]
     with open(out_file_name, mode='wt', encoding='utf-8') as out_file:
@@ -45,8 +45,8 @@ def prepare():
                    open(HDFace_origin, "r")]  # = [(x, y, z), ..., (x, y, z)]
     mask_moved = [tuple(map(float, line.split(' '))) for line in
                   open(HDFace_moved, "r")]
-    for p in mask_moved:
-        corresponds.append(get_nearest(p, mask_origin))
+    for p in mask_origin:
+        corresponds.append(get_nearest(p, mask_moved))
     print("Preparing...\n"
           "Origin mask size = {}, Moved mask size = {}, Corresponds table size = {}\n".format(
           len(mask_origin),
