@@ -1,0 +1,1 @@
+u starika i devchonki 16 let resnitc net, u ostal'nih gde net - budut zavtra

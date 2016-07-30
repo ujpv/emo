@@ -3,14 +3,14 @@
 import os
 
 MASK_FILE_NAMES = {
-    "mask_granny_positions.txt",
-    # "",
-    # "",
-    # "",
-    # "",
-    # "",
-    # "",
-    # "",
+    "vove/00_boy_10/mask.txt",
+    "vove/01_boy_16/mask.txt",
+    "vove/02_man_30/mask.txt",
+    "vove/03_oldman/mask.txt",
+    "vove/04_girl_10/mask.txt",
+    "vove/05_girl_16/mask.txt",
+    "vove/06_woman_30/mask.txt",
+    "vove/07_granny/mask.txt"
 }
 
 HDFace_origin = "HDFace_original.txt"
@@ -49,9 +49,9 @@ def prepare():
         corresponds.append(get_nearest(p, mask_moved))
     print("Preparing...\n"
           "Origin mask size = {}, Moved mask size = {}, Corresponds table size = {}\n".format(
-          len(mask_origin),
-          len(mask_moved),
-          len(corresponds)))
+        len(mask_origin),
+        len(mask_moved),
+        len(corresponds)))
 
 
 ########################################################################################################################
@@ -62,4 +62,4 @@ for name in MASK_FILE_NAMES:
     print("Processing {}...".format(name), end="")
     res_file_name = str(os.path.splitext(name)[0]) + "_fixed.txt"
     fix_mask(name, res_file_name)
-    print("Done\nWrite {}.".format(res_file_name))
+    print("Done\nWrite {}".format(res_file_name))
