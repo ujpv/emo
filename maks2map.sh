@@ -10,7 +10,7 @@
 ./mask2table.py vove/07_granny/head_default.txt   vove/07_granny/mask_fixed.txt   vove/07_granny/head_indexes.txt 0.1
 
 ./mask2table.py vove/00_boy_10/eyelashes.txt  vove/00_boy_10/mask_fixed.txt  vove/00_boy_10/eyelashes_indexes.txt 0.1
-./mask2table.py vove/02_man_30/eyelashes.txt  vove/02_man_30/mask_fixed.txt  vove/03_man_30/eyelashes_indexes.txt 0.1
+./mask2table.py vove/02_man_30/eyelashes.txt  vove/02_man_30/mask_fixed.txt  vove/02_man_30/eyelashes_indexes.txt 0.1
 ./mask2table.py vove/01_boy_16/eyelashes.txt  vove/01_boy_16/mask_fixed.txt  vove/01_boy_16/eyelashes_indexes.txt 0.1
 ./mask2table.py vove/04_girl_10/eyelashes.txt vove/04_girl_10/mask_fixed.txt vove/04_girl_10/eyelashes_indexes.txt 0.1
 ./mask2table.py vove/06_woman_30/eyelashes.txt vove/06_woman_30/mask_fixed.txt vove/06_woman_30/eyelashes_indexes.txt 0.1
